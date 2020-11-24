@@ -5,11 +5,13 @@ Home: https://github.com/google/gin-config
 
 Package license: Apache-2.0
 
-Feedstock license: BSD 3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/gin-config-feedstock/blob/master/LICENSE.txt)
 
 Summary: Gin-Config: A lightweight configuration library for Python
 
+Development: https://github.com/google/gin-config
 
+Documentation: https://github.com/google/gin-config/blob/master/docs/index.md
 
 Current build status
 ====================

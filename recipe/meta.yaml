@@ -1,32 +1,35 @@
 {% set name = "gin-config" %}
-{% set version = "0.4.0" %}
+{% set version = "0.5.0" %}
+
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 9499c060e1faa340959fc4ada7fe53f643d6f8996a80262b28a082c1ef6849de
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/gin-config-{{ version }}.tar.gz
+  sha256: 0c6ea5026ded927c8c93c990b01c695257c1df446e45e549a158cfbc79e19ed6
 
 build:
+  number: 0
   noarch: python
-  number: 1
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - pip
-    - python
+    - python >=3.6
   run:
-    - python
-    - six >=1.10.0
-  run_constrained:
-    - tensorflow >=1.13.0
+    - python >=3.6
 
 test:
   imports:
     - gin
+    - gin.testdata
+  commands:
+    - pip check
+  requires:
+    - pip
 
 about:
   home: https://github.com/google/gin-config
@@ -40,6 +43,3 @@ about:
 extra:
   recipe-maintainers:
     - mxr-conda
-    - oblute
-    - rluria14
-    - ndmaxar
